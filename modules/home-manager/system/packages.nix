@@ -72,6 +72,7 @@ in {
     cargo
 
     lf
+    ranger
     nemo
 
     neofetch
