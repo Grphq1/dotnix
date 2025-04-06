@@ -4,7 +4,7 @@
   unstable,
   inputs,
   ...
-}:let
+}: let
   unstable = inputs.nixpkgs-unstable.legacyPackages."x86_64-linux";
 in {
   programs.chromium = {
@@ -92,7 +92,6 @@ in {
     xz
     unzip
     p7zip
-
 
     nix-output-monitor
 
