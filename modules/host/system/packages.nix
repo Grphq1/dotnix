@@ -26,5 +26,10 @@
     git
     openvpn
     oh-my-posh
+
+    # auto mount
+    udevil
+    jmtpfs
+    libmtp
   ];
 }
