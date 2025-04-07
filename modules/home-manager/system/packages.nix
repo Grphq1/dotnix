@@ -29,6 +29,8 @@ in {
     extraConfig = ''
       local wez = require('wezterm')
       return {
+        window_background_opacity = 0.89,
+        text_background_opacity = 0.89,
         enable_wayland   = true,
         scrollback_lines = 1024,
         bold_brightens_ansi_colors = true,
