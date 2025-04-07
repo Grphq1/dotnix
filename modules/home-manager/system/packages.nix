@@ -110,7 +110,6 @@ in {
     nemo
 
     neofetch
-    wofi
 
     google-chrome
 
@@ -147,6 +146,8 @@ in {
     pnpm
     hyprpaper
     fastfetch
+
+    fzf
 
     grim
     slurp
