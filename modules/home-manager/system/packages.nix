@@ -36,6 +36,37 @@ in {
         bold_brightens_ansi_colors = true,
         harfbuzz_features = { 'calt=1', 'clig=1', 'liga=1' },
         color_scheme   = "followSystem",
+        colors = {
+          foreground = "#E6E6E6",
+          background = "#1E1E1E",
+          cursor_bg = "#64B4FF",
+          cursor_border = "#64B4FF",
+          cursor_fg = "#1E1E1E",
+
+          selection_bg = "#3264C8",
+          selection_fg = "#FFFFFF",
+
+          ansi = {
+            "#1E1E1E", -- black
+            "#B43232", -- red
+            "#5FAF5F", -- green (custom می‌تونیم تغییر بدیم)
+            "#D7AF5F", -- yellow (custom)
+            "#3264C8", -- blue
+            "#AF5FD7", -- magenta
+            "#64B4FF", -- cyan
+            "#E6E6E6", -- white
+          },
+          brights = {
+            "#3A3A3A", -- bright black
+            "#FF5F5F", -- bright red
+            "#87D787", -- bright green
+            "#FFD787", -- bright yellow
+            "#5F87FF", -- bright blue
+            "#D787FF", -- bright magenta
+            "#87D7FF", -- bright cyan
+            "#FFFFFF", -- bright white
+          },
+        },
         default_cursor_style = "SteadyUnderline",
         enable_scroll_bar    = false,
         warn_about_missing_glyphs = false,
