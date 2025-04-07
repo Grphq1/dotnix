@@ -51,6 +51,7 @@ in {
   };
 
   home.packages = with pkgs; [
+    rofi-wayland
     gcc
 
     htop
