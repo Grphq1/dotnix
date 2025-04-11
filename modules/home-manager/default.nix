@@ -6,5 +6,6 @@
   imports = [
     ./system
     ./hyprland
+    ./rofi
   ];
 }
