@@ -85,8 +85,8 @@ in {
 
   home.packages = with pkgs; [
     rofi-wayland
+    waybar
     gcc
-    anydesk
 
     htop
     spotify

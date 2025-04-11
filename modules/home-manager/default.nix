@@ -7,5 +7,6 @@
     ./system
     ./hyprland
     ./rofi
+    ./waybar
   ];
 }
