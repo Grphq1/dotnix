@@ -86,6 +86,7 @@ in {
   home.packages = with pkgs; [
     rofi-wayland
     gcc
+    anydesk
 
     htop
     spotify
@@ -114,7 +115,6 @@ in {
     google-chrome
 
     font-awesome
-    discord-ptb
 
     telegram-desktop
     yt-dlp
