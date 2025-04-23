@@ -87,6 +87,7 @@ in {
     rofi-wayland
     waybar
     gcc
+    dunst
 
     htop
     spotify
@@ -138,6 +139,7 @@ in {
     hyprpicker
     hypridle
     hyprlock
+    wvkbd
     brightnessctl
 
     tmux
