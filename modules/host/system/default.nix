@@ -11,6 +11,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.supportedFilesystems = ["ntfs"];
+  boot.cleanTmpDir = true;
 
   # Bluetooth
   hardware.bluetooth.enable = true; # enables support for Bluetooth
