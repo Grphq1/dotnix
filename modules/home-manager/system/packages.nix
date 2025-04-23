@@ -94,6 +94,8 @@ in {
     vscode
 
     unstable.neovim
+    nekoray
+    unstable.code-cursor
     lua51Packages.luarocks
     lua51Packages.lua
 
