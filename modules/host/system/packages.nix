@@ -7,6 +7,9 @@
   programs.hyprland.xwayland.enable = true;
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
+  virtualisation.waydroid.enable = true;
+
+
   programs.proxychains = {
     enable = true;
     proxies = {
