@@ -1,0 +1,4 @@
+set previewer ~/.config/lf/previewer
+set sixel true
+set drawbox
+set cursorpreviewfmt "\033[7m"

@@ -1,0 +1,133 @@
+{
+  "layer": "top",
+  "modules-left": [
+    "niri/workspaces",
+    "tray",
+    "niri/window"
+  ],
+  "modules-center": [],
+  "modules-right": [
+    "mpris",
+    "network",
+    "niri/language",
+    "cpu",
+    "temperature",
+    "pulseaudio",
+    "battery",
+    "backlight",
+    "clock"
+  ],
+  "niri/workspaces": {
+    "format": "{value}"
+  },
+  "tray": {
+    "icon-size": 15,
+    "spacing": 10
+  },
+  "niri/window": {
+    "format": "{}"
+  },
+  "cpu": {
+    "interval": 10,
+    "format": "CPU {usage}%"
+  },
+  "memory": {
+    "interval": 30,
+    "format": "MEM {used}GiB"
+  },
+  "disk": {
+    "interval": 30,
+    "format": "FS {used}",
+    "path": "/nix"
+  },
+  "temperature": {
+    "thermal-zone": 2,
+    "hwmon-path": "/sys/class/thermal/thermal_zone7/temp",
+    "critical-threshold": 70,
+    "format-critical": "{temperatureC}°C",
+    "format": "TEM {temperatureC}°C"
+  },
+  "backlight": {
+    "on-scroll-up": "brightnessctl set +5%",
+    "on-scroll-down": "brightnessctl set 5%-",
+    "device": "intel_backlight",
+    "format": "BRI {percent}%"
+  },
+  "niri/language": {
+    "format": "Lng {short} {variant}"
+  },
+  "mpris": {
+    "format": "{player_icon} {dynamic}",
+    "max-length": 50,
+    "format-paused": "{status_icon} <i>{dynamic}</i>",
+    "player-icons": {
+      "default": "▶",
+      "mpv": "🎵"
+    },
+    "status-icons": {
+      "paused": "⏸"
+    }
+  },
+  "keyboard-state": {
+    "capslock": true,
+    "format": {
+      "capslock": "Caplock"
+    }
+  },
+  "network": {
+    "format-wifi": "WIFI {essid} ({signalStrength}%)",
+    "format-ethernet": "LAN {ipaddr}/{cidr}",
+    "tooltip-format": "{ifname} via {gwaddr}",
+    "tooltip-format-wifi": "{ifname} {ipaddr} {bandwidthUpBytes} {bandwidthDownBytes}",
+    "tooltip-format-ethernet": "{ifname} {ipaddr} {bandwidthUpBytes} {bandwidthDownBytes}",
+    "format-linked": "{ifname} (No IP)",
+    "format-disconnected": "Disconnected",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+  },
+  "battery": {
+    "format": "BAT {capacity}%",
+    "interval": 20,
+    "states": {
+      "warning": 20,
+      "critical": 10
+    }
+  },
+  "clock": {
+    "interval": 1,
+    "format": "{:%a, %d. %b  %H:%M}",
+    "format-alt": "{:%d-%m-%Y %R:%S}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "format": {
+        "months": "<span color='#ff4f3f'><b>{}</b></span>",
+        "days": "<span color='#f6f6f6'><b>{}</b></span>",
+        "weeks": "<span color='#a9aa16'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#fa0f1a'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode"
+    }
+  },
+  "pulseaudio": {
+    "format": "SOU {volume}%",
+    "format-bluetooth": " SOU {volume}% (BT)",
+    "format-muted": "MUTED",
+    "format-icons": {
+      "headphone": "H",
+      "headset": "HS",
+      "default": [
+        ""
+      ]
+    },
+    "scroll-step": 1,
+    "on-click": "pavucontrol",
+    "ignored-sinks": [
+      "Easy Effects Sink"
+    ]
+  }
+}

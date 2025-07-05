@@ -1,12 +1,14 @@
 {
-  description = "Your new nix config";
+  description = "Alireza's NixOS Configuration";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    home-manager.url = "github:nix-community/home-manager/release-24.11";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager = {
+      url = "github:nix-community/home-manager/release-25.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -17,40 +19,44 @@
   } @ inputs: let
     inherit (self) outputs;
     systems = ["x86_64-linux"];
+    
+    username = "alirezam";
+    hostname = "nixos";
+    system = "x86_64-linux";
+    
+    myLib = import ./lib { inherit (nixpkgs) lib; };
 
     forAllSystems = nixpkgs.lib.genAttrs systems;
+    
+    specialArgs = {
+      inherit inputs outputs myLib username hostname;
+    };
   in {
     packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
-    # Formatter for your nix files, available through 'nix fmt'
-    # Other options beside 'alejandra' include 'nixpkgs-fmt'
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
 
-    # overlays = import ./overlays {inherit inputs;};
-
-    nixosModules = import ./modules/nixos;
-
-    homeManagerModules = import ./modules/home-manager;
+    overlays = import ./overlays {inherit inputs;};
 
     # NixOS configuration entrypoint
-    # Available through 'nixos-rebuild --flake .#your-hostname'
+    # Available through 'nixos-rebuild --flake .#${hostname}'
     nixosConfigurations = {
-      nixos = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
+      ${hostname} = nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = specialArgs;
         modules = [
-          # > Our main nixos configuration file <
-          ./nixos/configuration.nix
+          ./hosts/${hostname}/configuration.nix
         ];
       };
     };
 
-    # Standalone home-manager configuration entrypoint
-    # Available through 'home-manager --flake .#your-username@your-hostname'
+    # Standalone home-manager configuration entrypoint  
+    # Available through 'home-manager --flake .#${username}@${hostname}'
     homeConfigurations = {
-      "alirezam@nixos" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = {inherit inputs outputs;};
+      "${username}@${hostname}" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.${system};
+        extraSpecialArgs = specialArgs;
         modules = [
-          ./home-manager/home.nix
+          ./home/${username}/home.nix
         ];
       };
     };

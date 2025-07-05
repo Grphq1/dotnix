@@ -1,12 +1,12 @@
+# Home Manager modules export
 {
-  pkgs,
-  config,
-  ...
-}: {
   imports = [
-    ./system
-    ./hyprland
-    ./rofi
-    ./waybar
+    ./packages
+    ./theme
+    ./shell
+    ./desktop/rofi
+    ./desktop/waybar
+    ./desktop/lf
+    ./desktop/niri
   ];
 }
