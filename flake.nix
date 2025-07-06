@@ -19,15 +19,15 @@
   } @ inputs: let
     inherit (self) outputs;
     systems = ["x86_64-linux"];
-    
+
     username = "alirezam";
     hostname = "nixos";
     system = "x86_64-linux";
-    
-    myLib = import ./lib { inherit (nixpkgs) lib; };
+
+    myLib = import ./lib {inherit (nixpkgs) lib;};
 
     forAllSystems = nixpkgs.lib.genAttrs systems;
-    
+
     specialArgs = {
       inherit inputs outputs myLib username hostname;
     };
@@ -49,7 +49,7 @@
       };
     };
 
-    # Standalone home-manager configuration entrypoint  
+    # Standalone home-manager configuration entrypoint
     # Available through 'home-manager --flake .#${username}@${hostname}'
     homeConfigurations = {
       "${username}@${hostname}" = home-manager.lib.homeManagerConfiguration {

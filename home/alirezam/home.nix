@@ -15,7 +15,7 @@
   # Home Manager configuration
   programs.home-manager.enable = true;
   systemd.user.startServices = "sd-switch";
-  
+
   # Disable all dconf functionality
   dconf.enable = false;
 

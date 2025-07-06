@@ -1,29 +1,29 @@
 # WezTerm terminal configuration
-{ pkgs, ... }: {
+{pkgs, ...}: {
   programs.wezterm = {
     enable = true;
     extraConfig = ''
       local wez = require('wezterm')
-      
+
       return {
         -- Transparency settings
         window_background_opacity = 0.89,
         text_background_opacity = 0.89,
-        
+
         -- Wayland support
         enable_wayland = true,
-        
+
         -- Scrollback and behavior
         scrollback_lines = 1024,
         bold_brightens_ansi_colors = true,
         check_for_updates = false,
         window_close_confirmation = "NeverPrompt",
-        
+
         -- Font configuration
         harfbuzz_features = { 'calt=1', 'clig=1', 'liga=1' },
         font = wez.font("Fira Code"),
         font_size = 12.0,
-        
+
         -- Color scheme
         color_scheme = "followSystem",
         colors = {
@@ -34,7 +34,7 @@
           cursor_fg = "#1E1E1E",
           selection_bg = "#3264C8",
           selection_fg = "#FFFFFF",
-          
+
           -- ANSI colors
           ansi = {
             "#1E1E1E", -- black
@@ -57,10 +57,10 @@
             "#FFFFFF", -- bright white
           },
         },
-        
+
         -- Cursor configuration
         default_cursor_style = "SteadyUnderline",
-        
+
         -- UI settings
         enable_scroll_bar = false,
         warn_about_missing_glyphs = false,
@@ -68,7 +68,7 @@
         use_fancy_tab_bar = false,
         hide_tab_bar_if_only_one_tab = true,
         show_tab_index_in_tab_bar = false,
-        
+
         -- Pane settings
         inactive_pane_hsb = {
           saturation = 1.0,

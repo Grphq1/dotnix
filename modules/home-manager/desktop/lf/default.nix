@@ -1,6 +1,4 @@
-{
-  ...
-}: {
+{...}: {
   home.file = {
     ".config/lf/lfrc".source = ./lfrc;
     ".config/lf/previewer" = {

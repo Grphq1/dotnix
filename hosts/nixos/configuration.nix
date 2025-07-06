@@ -14,7 +14,7 @@
 
   # System configuration
   networking.hostName = hostname;
-  
+
   # Host-specific configuration overrides
   # These settings will override anything defined in the modules
 

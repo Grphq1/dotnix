@@ -1,5 +1,9 @@
 # System-wide configuration
-{ config, pkgs, ... }: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   time.timeZone = "Asia/Tehran";
   i18n = {
     defaultLocale = "en_US.UTF-8";
@@ -13,20 +17,20 @@
       LC_MONETARY = "en_US.UTF-8";
     };
   };
-  
+
   console = {
     font = "Lat2-Terminus16";
     keyMap = "us";
   };
-  
+
   nix = {
     settings = {
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = ["nix-command" "flakes"];
       auto-optimise-store = true;
       warn-dirty = false;
     };
   };
-  
+
   environment = {
     variables = {
       EDITOR = "nvim";
@@ -35,19 +39,19 @@
     };
     sessionVariables = {
       FLAKE = "/home/alirezam/nixos-config";
-      NIXOS_OZONE_WL = "1";  # Enable Wayland support for Chrome/Electron apps
+      NIXOS_OZONE_WL = "1"; # Enable Wayland support for Chrome/Electron apps
       MOZ_ENABLE_WAYLAND = "1";
     };
-    pathsToLink = [ "/libexec" ];
+    pathsToLink = ["/libexec"];
     # Enable system-wide fish shell completion for system packages
-    systemPackages = with pkgs; [ fishPlugins.done fishPlugins.fzf-fish ];
+    systemPackages = with pkgs; [fishPlugins.done fishPlugins.fzf-fish];
   };
-  
+
   powerManagement = {
     enable = true;
     cpuFreqGovernor = "ondemand";
   };
-  
+
   # Shell configuration
   programs.fish = {
     enable = true;
@@ -56,7 +60,7 @@
     '';
   };
   users.defaultUserShell = pkgs.fish;
-  
+
   # System-wide sound configuration
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;

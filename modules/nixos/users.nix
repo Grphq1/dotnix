@@ -1,5 +1,5 @@
 # User management
-{ username, ... }: {
+{username, ...}: {
   # Basic user configuration
   users.users.${username} = {
     isNormalUser = true;
@@ -14,9 +14,9 @@
       "wireshark"
       "wheel"
     ];
-    packages = [ ];
+    packages = [];
   };
-  
+
   # Additional group memberships
   users.groups = {
     # Create custom groups if needed
