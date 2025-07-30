@@ -1,5 +1,5 @@
 # WezTerm terminal configuration
-{pkgs, ...}: {
+{...}: {
   programs.wezterm = {
     enable = true;
     extraConfig = ''
@@ -21,7 +21,7 @@
 
         -- Font configuration
         harfbuzz_features = { 'calt=1', 'clig=1', 'liga=1' },
-        font = wez.font("Fira Code"),
+        font = wez.font("FiraCode Nerd Font"),
         font_size = 12.0,
 
         -- Color scheme
