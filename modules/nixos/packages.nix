@@ -1,6 +1,5 @@
 # System-wide packages and programs
 {
-  config,
   pkgs,
   ...
 }: {
@@ -60,6 +59,9 @@
 
     # Browser
     firefox
+
+    # Nvim config
+    nvim-pkg
 
     # VPN and network security
     openvpn

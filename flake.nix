@@ -9,12 +9,16 @@
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nvix = {
+      url = "github:Grphq1/nvix";
+    };
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
+    nvix,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -46,6 +50,14 @@
         modules = [
           ./hosts/${hostname}/configuration.nix
         ];
+        pkgs = import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+
+          overlays = [
+            nvix.overlays.default
+          ];
+        };
       };
     };
 
