@@ -20,6 +20,8 @@ in {
   browsers = with pkgs; [
     google-chrome
     brave
+    # WARNING: network issue with iran filters
+    chromium
   ];
 
   # Development packages
@@ -33,10 +35,13 @@ in {
     lua51Packages.luarocks
     lua51Packages.lua
 
+    # The right package manager
+    ni
+
     # Editors and IDEs
-    neovim
     vscode
     code-cursor
+    postman
   ];
 
   # Gaming packages
@@ -49,7 +54,6 @@ in {
     yt-dlp
     vlc
     mpv
-    spotify
   ];
 
   # Office packages
@@ -58,6 +62,9 @@ in {
     hunspell
     hunspellDicts.en-us
     gnome-calculator
+    evince
+    # general text editor
+    obsidian
   ];
 
   # System utilities
@@ -78,6 +85,9 @@ in {
     nix-du
     nix-melt
     graphviz # For nix-du visualization
+
+    # File Reader
+    glow
   ];
 
   # General utilities
@@ -99,7 +109,8 @@ in {
     distrobox
 
     # Communication
-    telegram-desktop
+    # I starting to use telegram-web (PWA)
+    # telegram-desktop
 
     # VPN
     v2rayn
