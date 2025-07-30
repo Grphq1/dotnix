@@ -1,6 +1,5 @@
 # System services configuration
 {
-  config,
   pkgs,
   username,
   ...
@@ -32,7 +31,7 @@
         CPU_MIN_PERF_ON_AC = 0;
         CPU_MAX_PERF_ON_AC = 100;
         CPU_MIN_PERF_ON_BAT = 0;
-        CPU_MAX_PERF_ON_BAT = 20;
+        CPU_MAX_PERF_ON_BAT = 80;
 
         START_CHARGE_THRESH_BAT0 = 30;
         STOP_CHARGE_THRESH_BAT0 = 80;
@@ -62,5 +61,6 @@
         ];
       };
     };
+    # xserver.displayManager.sddm.enable = true;
   };
 }
