@@ -91,6 +91,8 @@ output "eDP-1" {
     // Transform allows to rotate the output counter-clockwise, valid values are:
     // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
     transform "normal"
+    // transform "90"
+    // transform "180"
 
     // Position of the output in the global coordinate space.
     // This affects directional monitor actions like "focus-monitor-left", and cursor movement.
@@ -271,7 +273,7 @@ layout {
 // See the binds section below for more spawn examples.
 spawn-at-startup "waybar"
 spawn-at-startup "swww-daemon" 
-spawn-at-startup "swww img /home/alirezam/nixos-config/wallpaper/6.jpg" 
+spawn-at-startup "swww img /home/alirezam/nixos-config/wallpaper/7.jpg" 
 
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
