@@ -8,5 +8,6 @@
     ./desktop/waybar
     ./desktop/lf
     ./desktop/niri
+    ./desktop/default-apps
   ];
 }
