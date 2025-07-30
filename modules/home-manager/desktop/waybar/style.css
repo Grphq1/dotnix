@@ -57,6 +57,7 @@
 
 #temperature.critical {
   background-color: #ffffff;
+  color: #000;
 }
 
 #battery.charging {
