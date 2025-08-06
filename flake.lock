@@ -257,11 +257,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1753834304,
-        "narHash": "sha256-OZqxLIJQFO/dkCN6N9i4rHIWM3Bsmh+XZMmoO7zftrw=",
+        "lastModified": 1754462120,
+        "narHash": "sha256-SAllCIz7HkHvpn8M0QCRFAkHq1n+5J5Du7n+NJ4At8k=",
         "owner": "Grphq1",
         "repo": "nvix",
-        "rev": "3e6b9b231705b75a7b00141ca0ef0a0753d53146",
+        "rev": "25db07f5d0761b51a0a045332b5b8247db57f441",
         "type": "github"
       },
       "original": {
