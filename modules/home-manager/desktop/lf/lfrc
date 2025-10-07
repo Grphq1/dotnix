@@ -1,4 +1,5 @@
 set previewer ~/.config/lf/previewer
 set sixel true
-set drawbox
 set cursorpreviewfmt "\033[7m"
+
+map Q %lf -remote "send $id :cd \"$OLDPWD\"; quit"
