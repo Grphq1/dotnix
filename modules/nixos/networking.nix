@@ -1,9 +1,5 @@
 # Networking configuration
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   networking = {
     networkmanager = {
       enable = true;
