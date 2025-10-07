@@ -1,11 +1,12 @@
 # Shell configuration
-{
-  pkgs,
-  username,
-  ...
-}: {
+{pkgs, ...}: {
   programs.fish = {
     enable = true;
+    functions.lfcd = ''
+      # `command` is needed in case `lfcd` is aliased to `lf`.
+      # Quotes will cause `cd` to not change directory if `lf` prints nothing to stdout due to an error.
+      cd "$(command lf -print-last-dir $argv)"
+    '';
     interactiveShellInit = ''
       # Disable greeting
       set fish_greeting
