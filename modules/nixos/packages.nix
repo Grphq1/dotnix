@@ -1,28 +1,11 @@
 # System-wide packages and programs
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   programs = {
     nh = {
       enable = true;
       clean.enable = true;
       clean.extraArgs = "--keep-since 4d --keep 3";
       flake = "/home/alirezam/nixos-config";
-    };
-
-    # Gaming
-    gamescope = {
-      enable = true;
-      capSysNice = true;
-    };
-
-    steam = {
-      enable = true;
-      remotePlay.openFirewall = true;
-      dedicatedServer.openFirewall = true;
-      localNetworkGameTransfers.openFirewall = true;
-      gamescopeSession.enable = true;
     };
 
     nekoray = {
