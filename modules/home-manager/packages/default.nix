@@ -1,7 +1,6 @@
 # Main package configuration
 {
   pkgs,
-  config,
   inputs,
   ...
 }: let
@@ -16,7 +15,6 @@ in {
     overlays = [];
     config.allowUnfree = true;
   };
-
   # Install packages by category
   home.packages = with categories;
     audio
