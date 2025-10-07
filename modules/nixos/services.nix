@@ -1,20 +1,23 @@
 # System services configuration
-{
-  pkgs,
-  username,
-  ...
-}: {
+{pkgs, ...}: {
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
+  };
+
+  services.displayManager = {
+    sessionPackages = [pkgs.niri];
+    defaultSession = "niri";
+    gdm = {
+      enable = true;
+      wayland = true;
+    };
   };
 
   services = {
     blueman.enable = true;
 
     upower.enable = true;
-
-    getty.autologinUser = "${username}";
 
     # Device mounting
     devmon.enable = true;
@@ -45,22 +48,11 @@
     #     ClientTransportPlugin = "obfs4 exec ${pkgs.obfs4}/bin/obfs4proxy";
     #   };
     # };
+  };
 
-    # X server with i3 (backup WM)
-    xserver = {
-      enable = true;
-      displayManager.startx.enable = true;
-
-      windowManager.i3 = {
-        enable = true;
-        extraPackages = with pkgs; [
-          dmenu
-          i3status
-          i3lock
-          i3blocks
-        ];
-      };
-    };
-    # xserver.displayManager.sddm.enable = true;
+  xdg.portal = {
+    enable = true;
+    extraPortals = [pkgs.xdg-desktop-portal-wlr];
+    config.common.default = "wlr";
   };
 }
