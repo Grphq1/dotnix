@@ -1,9 +1,5 @@
 # Theme and appearance configuration
-{
-  pkgs,
-  username,
-  ...
-}: {
+{pkgs, ...}: {
   gtk = {
     enable = true;
 
