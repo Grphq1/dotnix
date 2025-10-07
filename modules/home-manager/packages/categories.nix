@@ -1,15 +1,14 @@
 # Package categories for better organization
+{pkgs, ...}
+:
+# let
+#   # Import unstable packages
+#   unstable = import inputs.nixpkgs-unstable {
+#     system = "x86_64-linux";
+#     config.allowUnfree = true;
+#   };
+# in
 {
-  pkgs,
-  inputs,
-  ...
-}: let
-  # Import unstable packages
-  unstable = import inputs.nixpkgs-unstable {
-    system = "x86_64-linux";
-    config.allowUnfree = true;
-  };
-in {
   # Audio packages
   audio = with pkgs; [
     pulseaudio
@@ -19,7 +18,6 @@ in {
   # Browser packages
   browsers = with pkgs; [
     google-chrome
-    brave
     # WARNING: network issue with iran filters
     chromium
   ];
@@ -34,6 +32,7 @@ in {
     cargo
     lua51Packages.luarocks
     lua51Packages.lua
+    alacritty
 
     # The right package manager
     ni
@@ -46,7 +45,9 @@ in {
 
   # Gaming packages
   games = with pkgs; [
-    lutris
+    # lutris
+    # protonplus
+    unityhub
   ];
 
   # Media packages
@@ -54,10 +55,13 @@ in {
     yt-dlp
     vlc
     mpv
+    spotify
   ];
 
   # Office packages
   office = with pkgs; [
+    # python313Packages.argostranslate
+    libretranslate
     libreoffice-qt
     hunspell
     hunspellDicts.en-us
@@ -97,12 +101,16 @@ in {
     ranger
     nemo
 
+    # support bidi for shell
+    bicon
+
     # CLI tools for lf
     chafa # Image preview
     file # File type detection
 
     # Terminal emulators
     kitty
+    fribidi
 
     # System tools
     dunst
@@ -110,7 +118,7 @@ in {
 
     # Communication
     # I starting to use telegram-web (PWA)
-    # telegram-desktop
+    telegram-desktop
 
     # VPN
     v2rayn
@@ -121,26 +129,7 @@ in {
 
   # Wayland/Niri specific packages
   wayland = with pkgs; [
-    # Core Wayland tools
-    wl-clipboard
-    xwayland-satellite # For X11 app support
-
-    # Niri ecosystem
-    niri
-    wvkbd # Virtual keyboard
-    swww # Wallpaper daemon
-    feh # Image viewer
-
-    # Application launcher and bar
-    rofi-wayland
-    waybar
-
-    # Waybar dependencies
-    fzf
-    brightnessctl
-    playerctl
-
-    # Fonts
+    xwayland-satellite
     font-awesome
   ];
 
