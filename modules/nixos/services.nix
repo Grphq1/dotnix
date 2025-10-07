@@ -41,6 +41,12 @@
       };
     };
 
+    # ollama = {
+    #   enable = true;
+    #   # Optional: preload models, see https://ollama.com/library
+    #   loadModels = ["llama3:8b"];
+    # };
+
     # tor = {
     #   enable = true;
     #   settings = {
