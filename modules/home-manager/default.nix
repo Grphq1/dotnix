@@ -2,7 +2,6 @@
 {
   imports = [
     ./packages
-    ./theme
     ./shell
     ./desktop/rofi
     ./desktop/waybar
