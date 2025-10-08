@@ -131,6 +131,7 @@
   wayland = with pkgs; [
     xwayland-satellite
     font-awesome
+    wl-clipboard
   ];
 
   # OBS Studio with plugins
