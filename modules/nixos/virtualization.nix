@@ -5,10 +5,10 @@
   ...
 }: {
   virtualisation = {
-    waydroid.enable = true;
+    waydroid.enable = false;
 
     docker = {
-      enable = true;
+      enable = false;
       # Run rootless docker
       rootless = {
         enable = true;
@@ -25,7 +25,7 @@
     };
 
     podman = {
-      enable = true;
+      enable = false;
       # Don't make podman create a user socket (conflicts with docker)
       dockerSocket.enable = false;
       defaultNetwork.settings.dns_enabled = true;
