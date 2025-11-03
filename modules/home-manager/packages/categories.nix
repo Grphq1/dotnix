@@ -25,6 +25,7 @@
   # Development packages
   development = with pkgs; [
     # Languages and runtimes
+    lazygit
     gcc
     python3
     nodejs_22
@@ -48,6 +49,8 @@
     # lutris
     # protonplus
     unityhub
+    godot
+    steam
   ];
 
   # Media packages
@@ -119,6 +122,7 @@
     # Communication
     # I starting to use telegram-web (PWA)
     telegram-desktop
+    discord
 
     # VPN
     v2rayn
