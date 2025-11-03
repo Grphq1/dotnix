@@ -9,8 +9,8 @@
 
     firewall = {
       enable = true;
-      allowedTCPPorts = [3000];
-      allowedUDPPorts = [3000];
+      allowedTCPPorts = [3000 2080 5173 5174];
+      allowedUDPPorts = [3000 2080 5173 5174];
       # Reject rather than drop packets
       rejectPackets = true;
       # Ping response but with rate limiting
