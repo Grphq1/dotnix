@@ -23,7 +23,11 @@
 
   programs.git = {
     enable = true;
-    userName = "lorem10";
-    userEmail = "momenei.alireza1382.15@gmail.com";
+    settings = {
+      user = {
+        name = "lorem10";
+        email = "momenei.alireza1382.15@gmail.com";
+      };
+    };
   };
 }
