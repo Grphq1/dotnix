@@ -30,11 +30,6 @@
       dockerSocket.enable = false;
       defaultNetwork.settings.dns_enabled = true;
     };
-
-    # virtualbox.host = {
-    #   enable = true;
-    #   enableExtensionPack = true;
-    # };
   };
 
   environment.systemPackages = with pkgs; [
