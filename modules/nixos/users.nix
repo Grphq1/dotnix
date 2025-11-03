@@ -11,7 +11,6 @@
       # "docker"
       # "libvirtd"
       "networkmanager"
-      "wireshark"
       "wheel"
     ];
     packages = [];
