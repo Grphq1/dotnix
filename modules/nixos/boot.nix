@@ -15,6 +15,6 @@
     supportedFilesystems = ["ntfs"];
 
     # Clean /tmp on boot
-    tmp.cleanOnBoot = true;
+    # tmp.cleanOnBoot = true;
   };
 }
