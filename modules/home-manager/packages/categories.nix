@@ -101,8 +101,6 @@
   utilities = with pkgs; [
     # File managers
     lf
-    ranger
-    nemo
 
     # support bidi for shell
     bicon
