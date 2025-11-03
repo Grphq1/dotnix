@@ -8,6 +8,5 @@
     ./desktop/lf
     ./desktop/niri
     ./desktop/alacritty
-    # ./desktop/default-apps
   ];
 }
