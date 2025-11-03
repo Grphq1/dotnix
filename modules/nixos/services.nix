@@ -5,6 +5,14 @@
     powerOnBoot = true;
   };
 
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+    extraPackages = with pkgs; [
+      mesa
+    ];
+  };
+
   services.displayManager = {
     sessionPackages = [pkgs.niri];
     defaultSession = "niri";
