@@ -23,6 +23,9 @@
   };
 
   services = {
+    # enable when cosmic comes to stable
+    # desktopManager.cosmic.enable = true;
+
     blueman.enable = true;
 
     upower.enable = true;
