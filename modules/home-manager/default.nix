@@ -7,5 +7,6 @@
     ./desktop/lf
     ./desktop/niri
     ./desktop/alacritty
+    ./desktop/tmux
   ];
 }
