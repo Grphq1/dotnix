@@ -40,7 +40,6 @@
 
     # Editors and IDEs
     vscode
-    code-cursor
     postman
   ];
 
@@ -70,8 +69,6 @@
     hunspellDicts.en-us
     gnome-calculator
     evince
-    # general text editor
-    obsidian
   ];
 
   # System utilities
@@ -121,9 +118,6 @@
     # I starting to use telegram-web (PWA)
     telegram-desktop
     discord
-
-    # VPN
-    v2rayn
 
     # Shell plugins
     fishPlugins.z
