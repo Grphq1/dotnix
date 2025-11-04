@@ -1,6 +1,7 @@
 {
   inputs,
   username,
+  config,
   ...
 }: {
   imports = [
@@ -24,6 +25,13 @@
   programs.git = {
     enable = true;
     settings = {
+      signing = {
+        key = "${config.home.homeDirectory}/.ssh/id_ed25519.pub";
+        signByDefault = true;
+      };
+
+      extraConfig.gpg.format = "ssh";
+
       user = {
         name = "lorem10";
         email = "momenei.alireza1382.15@gmail.com";
