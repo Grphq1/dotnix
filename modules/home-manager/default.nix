@@ -3,7 +3,6 @@
   imports = [
     ./packages
     ./shell
-    ./desktop/rofi
     ./desktop/waybar
     ./desktop/lf
     ./desktop/niri
