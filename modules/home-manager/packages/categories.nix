@@ -50,6 +50,7 @@
     unityhub
     godot
     steam
+    heroic
   ];
 
   # Media packages
