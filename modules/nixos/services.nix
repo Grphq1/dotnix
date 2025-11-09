@@ -25,6 +25,7 @@
   services = {
     # enable when cosmic comes to stable
     # desktopManager.cosmic.enable = true;
+    flatpak.enable = true;
 
     blueman.enable = true;
 
