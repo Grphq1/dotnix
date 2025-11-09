@@ -15,7 +15,7 @@
     auditd.enable = true;
 
     # Protect against Spectre and Meltdown vulnerabilities
-    protectKernelImage = true;
+    protectKernelImage = false;
 
     sudo = {
       enable = true;
