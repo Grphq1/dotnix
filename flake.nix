@@ -75,7 +75,10 @@
     # Available through 'home-manager --flake .#${username}@${hostname}'
     homeConfigurations = {
       "${username}@${hostname}" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.${system};
+        pkgs = import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+        };
         extraSpecialArgs = specialArgs;
         modules = [
           ./home/${username}/home.nix
