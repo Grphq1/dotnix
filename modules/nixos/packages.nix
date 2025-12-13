@@ -37,7 +37,6 @@
     # System utilities
     git
     mangohud
-    oh-my-posh
     gnupg
 
     # Browser
