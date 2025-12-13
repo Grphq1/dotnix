@@ -18,6 +18,15 @@ config-notification {
     disable-failed
 }
 
+hotkey-overlay {
+    skip-at-startup
+}
+
+overview {
+    zoom 0.25
+}
+
+
 input {
     keyboard {
         xkb {
@@ -130,6 +139,7 @@ cursor {
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 layout {
+    background-color "transparent"
     tab-indicator {
         width 8
         gap 8
@@ -348,7 +358,7 @@ window-rule {
 }
 
 layer-rule {
-  match namespace="^/home/alirezam/nixos-config/wallpaper/6.jpg$"
+  match namespace="^quickshell$"
   place-within-backdrop true
 }
 
