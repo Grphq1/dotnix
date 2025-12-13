@@ -49,7 +49,40 @@
     # protonplus
     unityhub
     godot
-    steam
+    (steam.override {
+      extraPkgs = pkgs:
+        with pkgs; [
+          # For Steam's Chromium to work properly with Intel graphics
+          xorg.libXcursor
+          xorg.libXi
+          xorg.libXinerama
+          xorg.libXScrnSaver
+          libpng
+          libpulseaudio
+          libvorbis
+          stdenv.cc.cc.lib
+          libkrb5
+          keyutils
+          # Intel graphics support
+          intel-media-driver
+          intel-vaapi-driver
+          mesa
+          vulkan-loader
+          vulkan-validation-layers
+          intel-compute-runtime
+        ];
+      extraProfile = ''
+        # Force GPU acceleration for Intel graphics
+        export LIBVA_DRIVER_NAME=iHD
+        export VDPAU_DRIVER=va_gl
+        # Enable hardware video acceleration in Steam
+        export MESA_GLSL_CACHE_DISABLE=false
+        export MESA_GL_VERSION_OVERRIDE=4.6
+        # Intel-specific optimizations
+        export INTEL_DEBUG=""
+        export ANV_ENABLE_PIPELINE_CACHE=1
+      '';
+    })
     heroic
   ];
 
@@ -93,6 +126,10 @@
 
     # File Reader
     glow
+
+    #proxy
+    v2rayn
+    tun2socks
   ];
 
   # General utilities
