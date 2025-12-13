@@ -61,5 +61,10 @@
     seahorse
     firejail
     usbguard
+
+    # Gaming and graphics tools
+    vulkan-tools
+    mesa-demos # Provides glxinfo
+    libva-utils # Provides vainfo for checking VA-API support
   ];
 }
