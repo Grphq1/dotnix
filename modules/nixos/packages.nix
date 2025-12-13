@@ -8,7 +8,8 @@
       flake = "/home/alirezam/dotnix";
     };
 
-    nekoray = {
+    # remove from new nixpkgs version
+    throne = {
       enable = true;
       tunMode.enable = true;
     };
