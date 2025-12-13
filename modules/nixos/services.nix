@@ -10,6 +10,11 @@
     enable32Bit = true;
     extraPackages = with pkgs; [
       mesa
+      intel-media-driver
+    ];
+    extraPackages32 = with pkgs.driversi686Linux; [
+      mesa
+      intel-media-driver
     ];
   };
 
