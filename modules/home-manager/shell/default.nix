@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   programs.oh-my-posh.enable = true;
 
+  programs.jq.enable = true;
   programs.fish = {
     enable = true;
 
