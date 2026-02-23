@@ -12,8 +12,6 @@
       packages = [pkgs.apparmor-profiles];
     };
 
-    auditd.enable = true;
-
     # Protect against Spectre and Meltdown vulnerabilities
     protectKernelImage = false;
 
