@@ -37,7 +37,6 @@
   environment.systemPackages = with pkgs; [
     # System utilities
     git
-    mangohud
     gnupg
 
     # Browser
