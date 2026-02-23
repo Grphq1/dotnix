@@ -1,12 +1,5 @@
 # Host-specific configuration for nixos
-{
-  config,
-  pkgs,
-  hostname,
-  username,
-  myLib,
-  ...
-}: {
+{hostname, ...}: {
   imports = [
     ./hardware-configuration.nix
     ../../modules/nixos/default.nix
