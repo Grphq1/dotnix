@@ -8,6 +8,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  id-token: write
 
 jobs:
   update:
@@ -20,10 +21,13 @@ jobs:
 
       - name: Setup magic Nix cache
         uses: DeterminateSystems/magic-nix-cache-action@v13
+        with:
+          use-flakehub: false
 
       - name: Update flake.lock
         uses: DeterminateSystems/update-flake-lock@v28
         with:
+          token: ${{ secrets.GH_TOKEN_FOR_UPDATES }}
           pr-title: "chore: update flake inputs"
           pr-labels: |
             dependencies
