@@ -3,6 +3,9 @@
   networking = {
     networkmanager = {
       enable = true;
+      plugins = with pkgs; [
+        networkmanager-openvpn # for .ovpn files (most common)
+      ];
     };
     nameservers = ["8.8.8.8" "8.8.4.4"];
     enableIPv6 = true;
