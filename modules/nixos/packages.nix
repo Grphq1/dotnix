@@ -1,6 +1,8 @@
 # System-wide packages and programs
 {pkgs, ...}: {
   programs = {
+    steam.enable = true;
+
     nh = {
       enable = true;
       clean.enable = true;
