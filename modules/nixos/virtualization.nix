@@ -1,12 +1,6 @@
 # Virtualization configuration
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   virtualisation = {
-    waydroid.enable = false;
-
     docker = {
       enable = false;
       # Run rootless docker
