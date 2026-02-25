@@ -1,9 +1,5 @@
 # System-wide configuration
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   time.timeZone = "Asia/Tehran";
   i18n = {
     defaultLocale = "en_US.UTF-8";
@@ -41,15 +37,15 @@
       FLAKE = "/home/alirezam/nixos-config";
       NIXOS_OZONE_WL = "1"; # Enable Wayland support for Chrome/Electron apps
       MOZ_ENABLE_WAYLAND = "1";
+      # Qt theming
+      QT_QPA_PLATFORMTHEME = "qt6ct";
+      QT_QPA_PLATFORMTHEME_QT6 = "qt6ct";
+      # GTK theming
+      GTK_THEME = "adw-gtk3";
     };
     pathsToLink = ["/libexec"];
     # Enable system-wide fish shell completion for system packages
     systemPackages = with pkgs; [fishPlugins.done fishPlugins.fzf-fish];
-  };
-
-  powerManagement = {
-    enable = true;
-    cpuFreqGovernor = "ondemand";
   };
 
   # Shell configuration
