@@ -27,9 +27,13 @@
     # desktopManager.cosmic.enable = true;
     flatpak.enable = true;
 
-    blueman.enable = true;
-
-    upower.enable = true;
+    # xserver = {
+    #   enable = true;
+    #   desktopManager = {
+    #     xterm.enable = false;
+    #     xfce.enable = true;
+    #   };
+    # };
 
     # Device mounting
     devmon.enable = true;
